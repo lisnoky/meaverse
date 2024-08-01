@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/MEAVERSE.css">
+    <style>
+        .rounded-img {
+            border-radius: 50px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #d8d8d854;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+            color: rgb(0, 0, 0);
+        }
+
+        .bottom-nav a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+            padding: 10px 0;
+        }
+
+        .bottom-nav a i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <h1>MEAVERSE</h1>
+    <h3>Artist of this 2 weeks is..</h3>
+    <a href="https://t.me/c1fmea" target="_blank">
+        <img src="IMAGES/cfmtrio.jpg" class="rounded-img">
+    </a>
+    <h3>New artist profile!</h3>
+    <a href="https://t.me/cfMEAVERSE" target="_blank">
+        <img src="IMAGES/meaverse.jpg" class="rounded-img">
+    </a>
+
+    <form action="" method="post">
+        <!-- Здесь могут быть поля формы -->
+    </form>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+    </script>
+
+    <div class="bottom-nav">
+        <a href="#home">
+            <i class="fa fa-home"></i>
+            Главная
+        </a>
+        <a href="#search">
+            <i class="fa fa-search"></i>
+            Поиск
+        </a>
+        <a href="#artists">
+            <i class="fa-solid fa-file"></i>
+            Артисты
+        </a>
+        <a href="#settings">
+            <i class="fa fa-cog"></i>
+            Настройки
+        </a>
+    </div>
+</body>
+</html>
