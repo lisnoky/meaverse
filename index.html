@@ -4,12 +4,74 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/MEAVERSE.css">
     <style>
-        .rounded-img {
-            border-radius: 50px;
+        @font-face {
+            font-family: 'Rota';
+            src: url('rota/Rota Complate Family/Rota-Regular.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Rota SemiBold';
+            src: url('rota/Rota Complate Family/Rota-SemiBold.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
         }
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Rota', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        * {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-container input[type="search"] {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 30px;
+            width: calc(100% - 40%);
+            max-width: 100%;
+        }
+
+        .search-container button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+
+        .rounded-img {
+            border: 5px solid #141414;
+            border-radius: 30px;
+        }
+
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Rota', sans-serif;
         }
 
         .bottom-nav {
@@ -21,15 +83,19 @@
             justify-content: space-around;
             align-items: center;
             height: 50px;
-            color: rgb(0, 0, 0);
+            color: black;
         }
 
         .bottom-nav a {
-            color: rgb(0, 0, 0);
+            color: black;
             text-decoration: none;
             text-align: center;
             flex: 1;
             padding: 10px 0;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #555;
         }
 
         .bottom-nav a i {
@@ -42,22 +108,56 @@
 </head>
 <body>
     <h1>MEAVERSE</h1>
+
+
+    <div class="search-container">
+        <form action="/search" method="get">
+            <input type="search" placeholder="Поиск.." name="search">
+            <button type="submit">🔍</button>
+        </form>
+    </div>
+
+
     <h3>Artist of this 2 weeks is..</h3>
     <a href="https://t.me/c1fmea" target="_blank">
-        <img src="IMAGES/cfmtrio.jpg" class="rounded-img">
+        <img src="IMAGES/cfmtrio.jpg" class="rounded-img responsive-img">
     </a>
+
+
     <h3>New artist profile!</h3>
     <a href="https://t.me/cfMEAVERSE" target="_blank">
-        <img src="IMAGES/meaverse.jpg" class="rounded-img">
+        <img src="IMAGES/meaverse.jpg" class="rounded-img responsive-img">
     </a>
+
 
     <form action="" method="post">
         <!-- Здесь могут быть поля формы -->
     </form>
 
+
     <script>
         let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        // функция для применения стилей темы
+        function applyTheme(themeParams) {
+            document.body.style.backgroundColor = themeParams.bg_color || '#e5f5fb';
+            document.body.style.color = themeParams.text_color || '#141414';
+            let buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.style.backgroundColor = themeParams.button_color || '#c8a2c8'
+                button.style.color = themeParams.button_text_color || '#141414'
+            });
+
+            let nav = document.querySelector('.bottom-nav');
+            nav.style.backgroundColor = themeParams.bg_color || '#e5f5fb'
+
+            // Получаем информацию о пользователе
+            let user = tg.initDataUnsafe.user;
+        }
+
     </script>
+
 
     <div class="bottom-nav">
         <a href="#home">
