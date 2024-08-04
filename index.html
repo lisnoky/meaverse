@@ -16,6 +16,15 @@
             font-weight: 900;
             font-style: normal;
         }
+
+        a:focus, a:active, a:hover,
+        button:focus, button:active, button:hover {
+            outline: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+
         body {
             margin: 0;
             font-family: 'Rota', sans-serif;
@@ -106,10 +115,6 @@
             text-align: center;
             flex: 1;
             padding: 10px 0;
-        }
-
-        .bottom-nav a:hover {
-            background-color: #555;
         }
 
         .bottom-nav a i {
