@@ -61,12 +61,12 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #d8d8d854;
+            background-color: #d8d8d8;
             display: flex;
             justify-content: space-around;
             align-items: center;
             height: 50px;
-            color: black;
+            color: #141414;
         }
 
         .bottom-nav ul {
@@ -101,6 +101,46 @@
             margin-left: 0;
             margin-right: 0;
         }
+
+        body {
+            background-color: #d8d8d8;
+            color: #141414;
+        }
+
+        a, .bordered {
+            color: #141414;
+            border: 2px solid #141414;
+        }
+
+        .bottom-nav {
+            background-color: #afafaf;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #141414;
+        }
+
+        @media (prefers-color-sheme: dark) {
+            body {
+                background-color: #141414;
+                color: #d8d8d8;
+            }
+
+            a, .bordered {
+                color: #d8d8d8;
+                border: 1px solid #d8d8d8;
+            }
+
+            .bottom-nav {
+                background-color: #070707;
+            }
+
+            .icon {
+                color: #d8d8d8;
+            }
+        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
