@@ -171,7 +171,7 @@ h1 {
 .bottom-nav a i {
     display: block;
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .bottom-nav * {
