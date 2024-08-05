@@ -41,8 +41,8 @@ button:focus, button:active, button:hover {
 }
 
 .icon-home {
-    width: 24px;
-    height: 24px;
+    width: 25px;
+    height: 25px;
     background-image: url('svg/icons/home.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -161,7 +161,7 @@ h1 {
 }
 
 .bottom-nav a {
-    color: #141414;
+    color: var(--text-color);
     text-decoration: none;
     text-align: center;
     flex: 1;
@@ -181,22 +181,39 @@ h1 {
 
 @media (prefers-color-scheme: light) {
     :root {
-        --background-color: #fbfbfb;
-        --text-color: #141414;
-        --link-color: none;
-        --border-color: #141414;
-        --bottom-nav-bg-color: rgba(216, 216, 216, 0.7);
-        --icon-color: #141414;
+      --background-color: #fbfbfb;
+      --text-color: #141414;
+      --link-color: none;
+      --border-color: #141414;
+      --bottom-nav-bg-color: rgba(216, 216, 216, 0.7);
+      --icon-color: #141414;
     }
-}
-
-@media (prefers-color-scheme: dark) {
+  
+    .icon-home,
+    .icon-artists,
+    .icon-citfm,
+    .icon-shop,
+    .icon-profile {
+      filter: invert(0) sepia(0) saturate(7500%) hue-rotate(0deg) brightness(0%) contrast(100%);
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #141414;
-        --text-color: #fbfbfb;
-        --link-color: none;
-        --border-color: #fbfbfb;
-        --bottom-nav-bg-color: rgba(7, 7, 7, 0.7);
-        --icon-color: #fbfbfb;
+      --background-color: #141414;
+      --text-color: #fbfbfb;
+      --link-color: none;
+      --border-color: #fbfbfb;
+      --bottom-nav-bg-color: rgba(7, 7, 7, 0.7);
+      --icon-color: #fbfbfb;
     }
-}
+  
+    .icon-home,
+    .icon-artists,
+    .icon-citfm,
+    .icon-shop,
+    .icon-profile {
+      filter: invert(1) sepia(0) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    }
+  }
+  
