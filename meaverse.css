@@ -25,7 +25,7 @@ button:focus, button:active, button:hover {
     --border-color: #141414;
     --bottom-nav-bg-color: rgba(216, 216, 216, 0.7);
     --icon-color: #141414;
-    --shadow-color: rgba(3, 3, 3, 0.4);
+    --shadow-color: rgba(3, 3, 3, 0.5);
     --image-size: 100%;
 }
 
@@ -184,6 +184,14 @@ h1 {
 .bottom-nav * {
     margin-left: 0;
     margin-right: 0;
+}
+
+.margin-top {
+    margin-top: -10px;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .profile-card {
