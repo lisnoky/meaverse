@@ -184,7 +184,7 @@ h1 {
 .profile-card {
     width: 90%;
     max-width: 500px;
-    height: 250px;
+    height: 200px;
     border: 2px solid var(--border-color);
     border-radius: 25px;
     overflow: hidden;
