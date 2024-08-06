@@ -263,6 +263,7 @@ h1 {
     left: -15px;
     filter: grayscale(100%);
     z-index: 1;
+    margin-top: -40px;
 }
 
 .profile-card-content {
