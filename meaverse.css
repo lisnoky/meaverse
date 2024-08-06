@@ -99,6 +99,9 @@ button:focus, button:active, button:hover {
 
 a {
     align-items: center;
+    outline: none;
+    text-decoration: none;
+    color: inherit;
 }
 
 body {
