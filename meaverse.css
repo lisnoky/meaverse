@@ -106,6 +106,7 @@ body {
     font-family: 'Rota', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+    padding-bottom: 50px;
 }
 
 img {
@@ -146,6 +147,7 @@ h1 {
     height: 50px;
     color: var(--text-color);
     font-family: 'Rota', sans-serif;
+    z-index: 100;
 }
 
 .bottom-nav ul {
@@ -229,7 +231,7 @@ h1 {
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    margin-top: -90px; /* Move avatar up to overlap background */
+    margin-top: -130px; /* Move avatar up to overlap background */
     z-index: 1;
     border: 2px solid var(--border-color);
     display: flex;
