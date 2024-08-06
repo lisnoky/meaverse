@@ -263,7 +263,7 @@ h1 {
     left: -15px;
     filter: grayscale(100%);
     z-index: 1;
-    transform: translateY(-100px);
+    transform: translateY(-150px);
 }
 
 .profile-card-content {
