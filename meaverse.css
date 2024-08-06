@@ -254,19 +254,7 @@ h1 {
     z-index: 1;
 }
 
-.background-image-vertical-revenge {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: -15px;
-    filter: grayscale(100%);
-    z-index: 1;
-    transform: translateY(-150px);
-}
-
-.background-image-vertical-existum {
+.background-image-vertical {
     width: 100%;
     height: auto;
     object-fit: cover;
