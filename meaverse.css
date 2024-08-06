@@ -26,7 +26,7 @@ button:focus, button:active, button:hover {
     --bottom-nav-bg-color: rgba(216, 216, 216, 0.7);
     --icon-color: #141414;
     --shadow-color: rgba(3, 3, 3, 0.4);
-    --image-size: 70px;
+    --image-size: 100%;
 }
 
 .icon-link {
@@ -131,7 +131,7 @@ h1 {
 }
 
 .responsive-img {
-    max-width: 855;
+    max-width: 90%;
     height: auto;
 }
 
@@ -182,7 +182,8 @@ h1 {
 }
 
 .profile-card {
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
     height: 250px;
     border: 2px solid var(--border-color);
     border-radius: 25px;
@@ -192,18 +193,18 @@ h1 {
     background: var(--background-color);
     margin-left: 15px;
     margin-right: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
 }
 
 .profile-card-background {
-    position: sticky;
+    position: relative;
     width: 100%;
     height: 150px;
 }
 
 .background-image {
-    width: 500px;
+    width: 100%;
     height: auto;
     object-fit: cover;
     position: absolute;
@@ -217,34 +218,37 @@ h1 {
     text-align: center;
     position: relative;
     color: var(--text-color);
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .avatar-container {
-    position: sticky;
-    width: 100px;
-    height: 100px;
+    position: relative;
+    width: 90px;
+    height: 90px;
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    margin-top: -80px; /* Move avatar up to overlap background */
+    margin-top: -90px; /* Move avatar up to overlap background */
+    z-index: 1;
+    border: 2px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .avatar {
     width: var(--image-size);
     height: var(--image-size);
     object-fit: cover;
-    border-radius: 50%;
     overflow: hidden;
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--border-color);
+    transform: scale(1.55) translateY(10px);
 }
 
 .nickname {
     font-size: 1.5em;
     margin: 0px 0;
-    margin-top: -10px;
+    margin-top: 10px;
     font-family: 'Rota SemiBold';
 }
 
