@@ -112,3 +112,55 @@ window.addEventListener('click', function(event) {
         }
     }
 });
+
+
+
+
+async function verifyTelegramData(initData, botToken) {
+    // Создаем секретный ключ на основе бот-токена
+    const secretKey = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(botToken));
+    
+    // Создаем строку для подписи
+    const checkString = Object.keys(initData)
+        .filter(key => key !== 'hash')
+        .sort()
+        .map(key => `${key}=${initData[key]}`)
+        .join('\n');
+    
+    const encoder = new TextEncoder();
+    const data = encoder.encode(checkString);
+    
+    // Импортируем ключ
+    const key = await crypto.subtle.importKey('raw', secretKey, {name: 'HMAC', hash: 'SHA-256'}, false, ['sign']);
+    
+    // Создаем подпись
+    const signature = await crypto.subtle.sign('HMAC', key, data);
+    
+    // Преобразуем подпись в хеш-строку
+    const hash = Array.from(new Uint8Array(signature))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+    
+    // Сравниваем полученный хеш с хешем из initData
+    return hash === initData.hash;
+}
+
+// Получаем данные пользователя
+let user = tg.initDataUnsafe;
+
+if (user) {
+    const BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE'; // Замените на токен вашего бота
+
+    verifyTelegramData(user, BOT_TOKEN).then(isValid => {
+        if (isValid) {
+            console.log("Authentication successful:", user);
+            // Здесь можно добавить код для отображения контента для авторизованного пользователя
+        } else {
+            console.error("Authentication failed");
+        }
+    }).catch(error => {
+        console.error("Authentication error:", error);
+    });
+} else {
+    console.error("No init data available");
+}
