@@ -349,9 +349,10 @@ h1 {
 .dropdown {
     position: relative;
     display: inline-block;
-    width: 200px;
-    margin-right: 25px;
+    width: 100px;
+    margin-right: 15px;
     border-radius: 25px;
+    box-shadow: 0 4px 8px var(--shadow-color);
     z-index: 100000;
 }
 
