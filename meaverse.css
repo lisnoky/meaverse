@@ -350,7 +350,7 @@ h1 {
     position: relative;
     display: inline-block;
     width: 200px;
-    margin-right: 600px;
+    margin-right: 25px;
     border-radius: 25px;
     z-index: 100000;
 }
