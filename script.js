@@ -44,3 +44,71 @@ function setActiveLink() {
 }
 
 document.addEventListener('DOMContentLoaded', setActiveLink);
+
+function toggleDropdown() {
+    var dropdownContent = document.getElementById("dropdown-content");
+    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+}
+
+function sortCards(criteria, direction, displayText) {
+    var container = document.getElementById('cards-container');
+    var cards = Array.from(container.getElementsByClassName('profile-card'));
+    var selectedOption = document.getElementById('selected-option');
+    var dropdownContent = document.getElementById("dropdown-content");
+
+    // Сортировка карточек
+    cards.sort(function(a, b) {
+        var aValue, bValue;
+        if (criteria === 'name') {
+            aValue = a.getAttribute('data-name').toLowerCase();
+            bValue = b.getAttribute('data-name').toLowerCase();
+        } else if (criteria === 'date') {
+            aValue = new Date(a.getAttribute('data-date'));
+            bValue = new Date(b.getAttribute('data-date'));
+        }
+
+        if (direction === 'asc') {
+            return aValue > bValue ? 1 : -1;
+        } else {
+            return aValue < bValue ? 1 : -1;
+        }
+    });
+
+    // Обновление контейнера
+    cards.forEach(function(card) {
+        container.appendChild(card);
+    });
+
+    // Обновление текста выбранного варианта
+    selectedOption.textContent = displayText;
+
+    // Закрытие выпадающего меню
+    dropdownContent.style.display = "none";
+}
+
+// Закрытие выпадающего меню при клике вне его области
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-select')) {
+        var dropdownContent = document.getElementById("dropdown-content");
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        }
+    }
+}
+
+
+
+document.getElementById('dropdown-select').addEventListener('click', function() {
+    var dropdownContent = document.getElementById('dropdown-content');
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+});
+
+// Закрытие выпадающего меню при клике вне его области
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropdown-select')) {
+        var dropdownContent = document.getElementById('dropdown-content');
+        if (dropdownContent.style.display === 'block') {
+            dropdownContent.style.display = 'none';
+        }
+    }
+});
