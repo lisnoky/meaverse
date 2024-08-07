@@ -349,8 +349,8 @@ h1 {
 .dropdown {
     position: relative;
     display: inline-block;
-    width: 130px;
-    margin-right: 830px;
+    width: 200px;
+    margin-right: 600px;
     border-radius: 25px;
     z-index: 100000;
 }
