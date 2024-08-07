@@ -354,6 +354,7 @@ h1 {
     border-radius: 25px;
     box-shadow: 0 4px 8px var(--shadow-color);
     z-index: 100000;
+    border: 2px solid var(--border-color);
 
 }
 
@@ -370,7 +371,7 @@ h1 {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    border: 2px solid var(--border-color);
+    border-radius: 25px;
 
 .dropdown-borders {
     border: 2px solid var(--border-color);
