@@ -200,3 +200,17 @@ document.addEventListener("DOMContentLoaded", function() {
         alert('Данные сохранены!');
     });
 });
+
+function showSection(sectionId) {
+    // Скрыть все секции
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => section.classList.remove('active'));
+
+    // Показать выбранную секцию
+    document.getElementById(sectionId).classList.add('active');
+
+    // Обновить активное состояние меню
+    const menuLinks = document.querySelectorAll('.top-menu a');
+    menuLinks.forEach(link => link.classList.remove('active'));
+    document.querySelector(`a[href="#${sectionId}"]`).classList.add('active');
+}

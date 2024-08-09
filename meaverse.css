@@ -28,6 +28,7 @@ button:focus, button:active, button:hover {
     --icon-color: #141414;
     --shadow-color: rgba(3, 3, 3, 0.5);
     --image-size: 100%;
+    --product-card: #f6f6f6;
 }
 
 .icon-link {
@@ -185,6 +186,121 @@ h1 {
 .bottom-nav * {
     margin-left: 0;
     margin-right: 0;
+}
+
+/* Стили для верхнего меню */
+.top-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c8a2c8; /* Золотистый цвет */
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+.top-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.top-menu a.active {
+    border-bottom: 3px solid var(--text-color);
+}
+
+/* Подчеркивание активного элемента */
+.top-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 60px; /* Отступ сверху, чтобы меню не перекрывало контент */
+    display: none; /* По умолчанию секции скрыты */
+}
+
+section.active {
+    display: block; /* Активная секция отображается */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет переносить элементы на новую строку при необходимости */
+    gap: 20px; /* Расстояние между карточками */
+    justify-content: center; /* Центрирует карточки по горизонтали */
+}
+
+.product-card {
+    width: 300px;
+    background-color: var(--product-card);
+    border-radius: 25px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image img {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin-top: 14px;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.product-description {
+    font-size: 1em;
+    color: #777;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 1.25em;
+    color: #000;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.add-to-cart-btn {
+    padding: 10px 20px;
+    background-color: #89ac76;
+    color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #c8a2c8;
 }
 
 .margin-top {
@@ -422,29 +538,10 @@ h1 {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.form-group {
-    margin-bottom: 15px;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-.form-group button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-.form-group button:hover {
-    background-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+
+.header {
+        background-color: var(--tg-theme-header-bg-color);
 }
 
 @media (prefers-color-scheme: light) {
@@ -455,6 +552,7 @@ h1 {
       --border-color: #141414;
       --bottom-nav-bg-color: rgba(216, 216, 216, 0.7);
       --icon-color: #141414;
+      --product-card: #f6f6f6;
     }
   
     .icon-home,
@@ -476,6 +574,7 @@ h1 {
       --border-color: #fbfbfb;
       --bottom-nav-bg-color: rgba(7, 7, 7, 0.7);
       --icon-color: #fbfbfb;
+      --product-card: #070707;
     }
   
     .icon-home,
