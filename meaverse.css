@@ -246,6 +246,10 @@ html {
     margin-top: 10px;
 }
 
+.widht {
+    width: 90%;
+}
+
 .product-card {
     width: 150px;
     margin-top: -150px;
