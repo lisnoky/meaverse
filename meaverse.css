@@ -191,18 +191,14 @@ h1 {
 
 /* Стили для верхнего меню */
 .top-menu {
+    display: flex;
+    justify-content: space-around;
     background-color: #c8a2c8;
     padding: 10px 0;
 }
 
-.top-menu-gadient {
-    display: flex;
-    justify-content: space-around;
-    background: linear-gradient(
-        rgba(200, 162, 200, 1),
-        rgba(200, 162, 200, 0)
-    );
-    padding: 10px 0;
+.left-text {
+    margin-left: 20px;
 }
 
 .top-menu a {
@@ -247,6 +243,7 @@ html {
     flex-wrap: wrap; /* Позволяет переносить элементы на новую строку при необходимости */
     gap: 20px; /* Расстояние между карточками */
     justify-content: center; /* Центрирует карточки по горизонтали */
+    margin-top: 10px;
 }
 
 .product-card {
