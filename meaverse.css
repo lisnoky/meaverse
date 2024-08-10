@@ -243,6 +243,7 @@ html {
 
 .product-card {
     width: 150px;
+    margin-top: -150px;
     background-color: var(--product-card);
     border-radius: 25px;
     border: 2px solid var(--border-color);
