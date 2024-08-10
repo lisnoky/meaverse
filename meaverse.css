@@ -142,6 +142,40 @@ h1 {
     height: auto;
 }
 
+/* Стили для верхнего меню */
+.top-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c8a2c8;
+    padding: 10px 0;
+}
+
+.left-text {
+    margin-left: 20px;
+}
+
+.top-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.top-menu a.active {
+    position: relative; /* Добавляем позиционирование для родительского элемента */
+}
+
+/* Подчеркивание активного элемента */
+.top-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Уменьшаем высоту */
+    background-color: var(--text-color); /* Меняем цвет подчеркивания на подходящий */
+    border-radius: 25px;
+}
 .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -189,40 +223,6 @@ h1 {
     margin-right: 0;
 }
 
-/* Стили для верхнего меню */
-.top-menu {
-    display: flex;
-    justify-content: space-around;
-    background-color: #c8a2c8;
-    padding: 10px 0;
-}
-
-.left-text {
-    margin-left: 20px;
-}
-
-.top-menu a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 10px;
-    font-size: 1.2em;
-}
-
-.top-menu a.active {
-    border-bottom: 3px solid var(--text-color);
-}
-
-/* Подчеркивание активного элемента */
-.top-menu a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 25px;
-}
 
 section {
     padding: 100px 20px;
@@ -255,6 +255,7 @@ html {
     box-shadow: 0 4px 8px var(--shadow-color);
     overflow: hidden;
     transition: transform 0.3s ease;
+    margin-bottom: 170px;
 }
 
 .product-card:hover {
@@ -268,7 +269,7 @@ html {
     display: block;
     margin-top: 14px;
     margin-bottom: -10px;
-    border-radius: 20px;
+    border-radius: 19px;
     border: 2px solid var(--border-color);
 }
 

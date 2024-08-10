@@ -16,11 +16,11 @@
 
     <!-- Верхнее меню -->
     <div class="top-menu">
-        <a href="#Albums" onclick="showSection('Albums')">Albums</a>
-        <a href="#Lightsticks" onclick="showSection('Lightsticks')">Lightsticks</a>
-        <a href="#Clothes" onclick="showSection('Clothes')">Clothes</a>
-        <a href="#Special" onclick="showSection('Special')">Special</a>
-    </div>
+        <a href="#Albums" onclick="showSection('Albums', this)">Albums</a>
+        <a href="#Lightsticks" onclick="showSection('Lightsticks', this)">Lightsticks</a>
+        <a href="#Clothes" onclick="showSection('Clothes', this)">Clothes</a>
+        <a href="#Special" onclick="showSection('Special', this)">Special</a>
+    </div>    
 
     <section id="Albums">
         <div class="product-container">
@@ -35,9 +35,28 @@
                     <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
-        </div>
-
-        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="IMAGES/meaverse-sample-album.png" alt="Product Image">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-title">MEAVERSE album sample</h2>
+                    <p class="product-description">sample of album or any other product card in MEAVERSE</p>
+                    <p class="product-price">$14.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="IMAGES/meaverse-sample-album.png" alt="Product Image">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-title">MEAVERSE album sample</h2>
+                    <p class="product-description">sample of album or any other product card in MEAVERSE</p>
+                    <p class="product-price">$14.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
             <div class="product-card">
                 <div class="product-image">
                     <img src="IMAGES/meaverse-sample-album.png" alt="Product Image">
@@ -50,6 +69,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <section id="Lightsticks">
