@@ -222,20 +222,26 @@ function showSection(sectionId, element) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const tg = window.Telegram.WebApp;
-    
-    // Инициализация WebApp
-    tg.ready();
+    // Проверяем, доступен ли объект Telegram WebApp
+    if (window.Telegram && window.Telegram.WebApp) {
+        const tg = window.Telegram.WebApp;
+        
+        // Инициализация WebApp
+        tg.ready();
 
-    // Получение данных пользователя
-    const user = tg.initDataUnsafe?.user;
+        // Получение данных пользователя
+        const user = tg.initDataUnsafe?.user;
 
-    if (user) {
-        // Отображение данных пользователя
-        document.getElementById("user-photo").src = user.photo_url;
-        document.getElementById("user-name").textContent = user.first_name + " " + user.last_name;
-        document.getElementById("user-id").textContent = `User ID: ${user.id}`;
+        if (user) {
+            // Отображение данных пользователя
+            document.getElementById("user-photo").src = user.photo_url;
+            document.getElementById("user-name").textContent = `${user.first_name} ${user.last_name}`;
+            document.getElementById("user-id").textContent = `User ID: ${user.id}`;
+        } else {
+            document.getElementById("user-info").textContent = "Unable to retrieve user data.";
+        }
     } else {
-        document.getElementById("user-info").textContent = "Unable to retrieve user data.";
+        console.error("Telegram WebApp не инициализирован. Запустите приложение внутри Telegram.");
+        document.getElementById("user-info").textContent = "Telegram WebApp is not initialized.";
     }
 });
