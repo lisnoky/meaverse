@@ -228,16 +228,22 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Инициализация WebApp
         tg.ready();
+        
+        // Добавляем отладочные сообщения
+        console.log("Telegram WebApp инициализирован");
 
         // Получение данных пользователя
         const user = tg.initDataUnsafe?.user;
 
         if (user) {
+            console.log("Данные пользователя успешно получены:", user);
+
             // Отображение данных пользователя
             document.getElementById("user-photo").src = user.photo_url;
             document.getElementById("user-name").textContent = `${user.first_name} ${user.last_name}`;
             document.getElementById("user-id").textContent = `User ID: ${user.id}`;
         } else {
+            console.log("Данные пользователя не получены");
             document.getElementById("user-info").textContent = "Unable to retrieve user data.";
         }
     } else {
