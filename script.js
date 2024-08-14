@@ -201,7 +201,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function showSection(sectionId) {
+
+
+function showSection(sectionId, element) {
     // Скрыть все секции
     const sections = document.querySelectorAll('section');
     sections.forEach(section => section.classList.remove('active'));
@@ -212,5 +214,28 @@ function showSection(sectionId) {
     // Обновить активное состояние меню
     const menuLinks = document.querySelectorAll('.top-menu a');
     menuLinks.forEach(link => link.classList.remove('active'));
-    document.querySelector(`a[href="#${sectionId}"]`).classList.add('active');
+
+    // Добавить класс active к нажатому элементу
+    element.classList.add('active');
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tg = window.Telegram.WebApp;
+    
+    // Инициализация WebApp
+    tg.ready();
+
+    // Получение данных пользователя
+    const user = tg.initDataUnsafe?.user;
+
+    if (user) {
+        // Отображение данных пользователя
+        document.getElementById("user-photo").src = user.photo_url;
+        document.getElementById("user-name").textContent = user.first_name + " " + user.last_name;
+        document.getElementById("user-id").textContent = `User ID: ${user.id}`;
+    } else {
+        document.getElementById("user-info").textContent = "Unable to retrieve user data.";
+    }
+});
