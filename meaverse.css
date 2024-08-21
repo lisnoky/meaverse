@@ -29,7 +29,6 @@ button:focus, button:active, button:hover {
     --shadow-color: rgba(3, 3, 3, 0.5);
     --image-size: 100%;
     --product-card: #f6f6f6;
-    --gradient-girl: lin
 }
 
 .icon-link {
@@ -380,6 +379,17 @@ html {
     z-index: 1;
 }
 
+.background-image2 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    left: -15px;
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
 .background-image-vertical {
     width: 100%;
     height: auto;
@@ -575,7 +585,7 @@ html {
 
 }
   
-  @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
       --background-color: #141414;
       --text-color: #fbfbfb;
