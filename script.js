@@ -251,3 +251,22 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("user-info").textContent = "Telegram WebApp is not initialized.";
     }
 });
+
+
+
+// Функция для получения данных пользователя из Telegram
+function getTelegramUserInfo() {
+    Telegram.WebApp.ready(function() {
+        const user = Telegram.WebApp.initDataUnsafe.user;
+
+        if (user) {
+            document.getElementById('profile-photo').src = user.photo_url;
+            document.getElementById('username').textContent = `${user.first_name} ${user.last_name}`;
+        } else {
+            document.getElementById('username').textContent = 'User';
+        }
+    });
+}
+
+// Вызов функции при загрузке страницы
+window.onload = getTelegramUserInfo;
