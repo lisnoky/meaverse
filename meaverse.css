@@ -380,11 +380,11 @@ html {
 }
 
 .background-image2 {
-    width: 100%;
+    width: 150%;
     height: auto;
     object-fit: cover;
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: -15px;
     filter: grayscale(100%);
     z-index: 1;
