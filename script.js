@@ -129,3 +129,38 @@ function showSection(sectionId, element) {
     document.querySelectorAll('.top-menu a').forEach(link => link.classList.remove('active'));
     element.classList.add('active');
 }
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Проверяем доступность объекта Telegram WebApp
+    if (window.Telegram && window.Telegram.WebApp) {
+        const tg = window.Telegram.WebApp;
+        
+        // Инициализация WebApp
+        tg.ready(function() {
+            // Добавляем отладочные сообщения
+            console.log("Telegram WebApp инициализирован");
+
+            // Получение данных пользователя
+            const user = tg.initDataUnsafe?.user;
+
+            if (user) {
+                console.log("Данные пользователя успешно получены:", user);
+
+                // Отображение данных пользователя
+                document.getElementById('profile-photo').src = user.photo_url;
+                document.getElementById('username').textContent = `${user.first_name} ${user.last_name}`;
+                document.getElementById('user-id').textContent = `User ID: ${user.id}`;
+            } else {
+                console.log("Данные пользователя не получены или отсутствуют.");
+                document.getElementById('username').textContent = "Не удалось получить данные пользователя.";
+            }
+        });
+    } else {
+        console.error("Telegram WebApp не инициализирован. Запустите приложение внутри Telegram.");
+        document.getElementById("username").textContent = "Telegram WebApp is not initialized.";
+    }
+});
+Ы
