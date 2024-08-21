@@ -165,42 +165,6 @@ if (user) {
     console.error("No init data available");
 }
 
-// scripts.js
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Проверяем, есть ли данные пользователя в локальном хранилище
-    let userData = JSON.parse(localStorage.getItem('userData'));
-
-    // Если данных нет, получаем их из Telegram Web App API
-    if (!userData) {
-        const tg = window.Telegram.WebApp;
-        userData = tg.initDataUnsafe.user;
-
-        // Сохраняем данные в локальное хранилище
-        localStorage.setItem('userData', JSON.stringify(userData));
-    }
-
-    // Заполняем форму данными пользователя
-    document.getElementById('name').value = userData.first_name || '';
-    document.getElementById('username').value = userData.username || '';
-    document.getElementById('email').value = userData.email || ''; // Assuming the user data contains email
-
-    // Обработка формы
-    document.getElementById('accountForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        // Обновляем данные пользователя
-        userData.first_name = document.getElementById('name').value;
-        userData.username = document.getElementById('username').value;
-        userData.email = document.getElementById('email').value;
-
-        // Сохраняем обновленные данные в локальное хранилище
-        localStorage.setItem('userData', JSON.stringify(userData));
-
-        alert('Данные сохранены!');
-    });
-});
-
 
 
 function showSection(sectionId, element) {
