@@ -1,5 +1,7 @@
 // Подключение Telegram WebApp
 let tg = window.Telegram.WebApp;
+let buy = document.getElementById("buy");
+let order = document.getElementById("order");
 tg.expand();
 
 // Функция для применения стилей темы
@@ -45,8 +47,6 @@ function toggleDropdown() {
     const dropdownContent = document.getElementById("dropdown-content");
     dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
 }
-
-document.getElementById('dropdown-select').addEventListener('click', toggleDropdown);
 
 // Закрытие выпадающего меню при клике вне его области
 window.addEventListener('click', function(event) {
@@ -107,8 +107,8 @@ document.addEventListener("DOMContentLoaded", function() {
             verifyTelegramData(tg.initDataUnsafe, BOT_TOKEN).then(isValid => {
                 if (isValid) {
                     console.log("Authentication successful:", user);
-                    document.getElementById('profile-photo').src = user.photo_url;
-                    document.getElementById('username').textContent = `${user.first_name} ${user.last_name}`;
+                    document.getElementById('profile-photo').value = tg.initDataUnsafe.photo_url
+                    document.getElementById('username').value = tg.initDataUnsafe.first_name + " " + tg.initDataUnsafe.last_name
                 } else {
                     console.error("Authentication failed");
                 }
@@ -163,4 +163,73 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("username").textContent = "Telegram WebApp is not initialized.";
     }
 });
-Ы
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.Telegram && window.Telegram.WebApp) {
+        const tg = window.Telegram.WebApp;
+        tg.ready(function() {
+            console.log("Telegram WebApp инициализирован");
+
+            const user = tg.initDataUnsafe?.user;
+            console.log("Данные пользователя:", user);
+        });
+    } else {
+        console.error("Telegram WebApp не инициализирован.");
+    }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.Telegram && window.Telegram.WebApp) {
+        const tg = window.Telegram.WebApp;
+        tg.ready(function() {
+            const user = tg.initDataUnsafe?.user;
+
+            if (user) {
+                document.getElementById('profile-photo').src = user.photo_url;
+                document.getElementById('username').textContent = `${user.first_name} ${user.last_name}`;
+                document.getElementById('user-id').textContent = `User ID: ${user.id}`;
+            } else {
+                document.getElementById('username').textContent = "Не удалось получить данные пользователя.";
+            }
+        });
+    } else {
+        document.getElementById("username").textContent = "Telegram WebApp не инициализирован.";
+    }
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    try {
+        if (window.Telegram && window.Telegram.WebApp) {
+            const tg = window.Telegram.WebApp;
+            tg.ready(function() {
+                const user = tg.initDataUnsafe?.user;
+
+                if (user) {
+                    document.getElementById('profile-photo').src = user.photo_url;
+                    document.getElementById('username').textContent = `${user.first_name} ${user.last_name}`;
+                    document.getElementById('user-id').textContent = `User ID: ${user.id}`;
+                } else {
+                    document.getElementById('username').textContent = "Не удалось получить данные пользователя.";
+                }
+            });
+        } else {
+            document.getElementById("username").textContent = "Telegram WebApp не инициализирован.";
+        }
+    } catch (error) {
+        console.error("Произошла ошибка:", error);
+        document.getElementById('username').textContent = "Произошла ошибка при загрузке данных.";
+    }
+});
+
+
+
+
