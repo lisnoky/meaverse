@@ -107,8 +107,8 @@ document.addEventListener("DOMContentLoaded", function() {
             verifyTelegramData(tg.initDataUnsafe, BOT_TOKEN).then(isValid => {
                 if (isValid) {
                     console.log("Authentication successful:", user);
-                    document.getElementById('profile-photo').value = tg.initDataUnsafe.photo_url
-                    document.getElementById('username').value = tg.initDataUnsafe.first_name + " " + tg.initDataUnsafe.last_name
+                    document.getElementById('profile-photo').value = tg.initDataUnsafe.user.photo_url
+                    document.getElementById('username').value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name
                 } else {
                     console.error("Authentication failed");
                 }
