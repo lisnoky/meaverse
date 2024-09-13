@@ -5,11 +5,13 @@
     font-weight: 400;
     font-style: normal;
 }
-@font-face {
-    font-family: 'Rota SemiBold';
-    src: url('rota/Rota Complate Family/Rota-SemiBold.otf') format('opentype');
-    font-weight: 600;
-    font-style: normal;
+
+body {
+    font-family: 'Rota', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding-bottom: 50px;
+    margin: 16px;
 }
 
 a:focus, a:active, a:hover,
@@ -29,6 +31,13 @@ button:focus, button:active, button:hover {
     --shadow-color: rgba(3, 3, 3, 0.5);
     --image-size: 100%;
     --product-card: #f6f6f6;
+}
+
+.banner {
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid rgba(200, 162, 200, 1);
 }
 
 .icon-link {
@@ -99,82 +108,6 @@ button:focus, button:active, button:hover {
     align-self: center; /* Выравнивание иконки по центру своей ячейки */
 }
 
-a {
-    align-items: center;
-    outline: none;
-    text-decoration: none;
-    color: inherit;
-}
-
-body {
-    margin: 0;
-    font-family: 'Rota', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding-bottom: 50px;
-}
-
-img {
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-h2, h3, h4, h5 {
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: 'Rota', sans-serif;
-}
-
-h1 {
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: 'Rota SemiBold', sans-serif;
-}
-
-.rounded-img {
-    border: 2px solid var(--border-color);
-    border-radius: 25px;
-}
-
-.responsive-img {
-    max-width: 90%;
-    height: auto;
-}
-
-/* Стили для верхнего меню */
-.top-menu {
-    display: flex;
-    justify-content: space-around;
-    background-color: #c8a2c8;
-    padding: 10px 0;
-}
-
-.left-text {
-    margin-left: 20px;
-}
-
-.top-menu a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 10px;
-    font-size: 1.2em;
-}
-
-.top-menu a.active {
-    position: relative; /* Добавляем позиционирование для родительского элемента */
-}
-
-/* Подчеркивание активного элемента */
-.top-menu a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px; /* Уменьшаем высоту */
-    background-color: var(--text-color); /* Меняем цвет подчеркивания на подходящий */
-    border-radius: 25px;
-}
 .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -222,231 +155,6 @@ h1 {
     margin-right: 0;
 }
 
-
-section {
-    padding: 100px 20px;
-    margin-top: 60px; /* Отступ сверху, чтобы меню не перекрывало контент */
-    display: none; /* По умолчанию секции скрыты */
-}
-
-section.active {
-    display: block; /* Активная секция отображается */
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.product-container {
-    display: flex;
-    flex-wrap: wrap; /* Позволяет переносить элементы на новую строку при необходимости */
-    gap: 20px; /* Расстояние между карточками */
-    justify-content: center; /* Центрирует карточки по горизонтали */
-    margin-top: 10px;
-}
-
-.product-card {
-    width: 130px;
-    margin-top: -150px;
-    background-color: var(--product-card);
-    border-radius: 25px;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 4px 8px var(--shadow-color);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    margin-bottom: 150px;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-}
-
-.product-image img {
-    width: auto;
-    max-width: 75%;
-    height: auto;
-    display: block;
-    margin-top: 14px;
-    margin-bottom: -10px;
-    border-radius: 19px;
-    border: 2px solid var(--border-color);
-}
-
-.product-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.product-title {
-    font-size: 15px;
-    margin: 10px 0;
-    color: var(--text-color);
-}
-
-.product-description {
-    font-size: 12px;
-    color: #777;
-    margin: 10px 0;
-}
-
-.product-price {
-    font-size: 15px;
-    color: var(--text-color);
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.add-to-cart-btn {
-    font-size: 13px;
-    padding: 5px 20px;
-    background-color: #89ac76;
-    color: var(--text-color);
-    border-radius: 20px;
-    border: 2px solid var(--border-color);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #c8a2c8;
-}
-
-.margin-top {
-    margin-top: -10px;
-}
-
-.banner {
-    position: relative;
-    width: 90%;
-    max-width: 950px;
-    height: auto;
-    overflow: hidden;
-}
-
-.banner-image {
-    width: 100%;
-    max-width: 995px;
-    height: auto;
-    display: block;
-    margin-left: 0px;
-    z-index: 1;
-}
-
-.banner-text {
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
-    color: var(--text-color);
-    font-size: 4em;
-    z-index: 3;
-    font-family: 'Rota';
-}
-
-.shadow {
-    box-shadow: 0 4px 8px var(--shadow-color);
-}
-
-.profile-card {
-    width: 90%;
-    max-width: 500px;
-    height: 200px;
-    border: 2px solid var(--border-color);
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    position: relative;
-    background: var(--background-color);
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 20px;
-
-}
-
-.profile-card-background {
-    position: relative;
-    width: 100%;
-    height: 150px;
-}
-
-.background-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: -15px;
-    filter: grayscale(100%);
-    z-index: 1;
-}
-
-.background-image2 {
-    width: 150%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    top: 0px;
-    left: -15px;
-    filter: grayscale(100%);
-    z-index: 1;
-}
-
-.background-image-vertical {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: -15px;
-    filter: grayscale(100%);
-    z-index: 1;
-    margin-top: -40px;
-}
-
-.profile-card-content {
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    color: var(--text-color);
-    height: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-}
-
-.avatar-container {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -130px; /* Move avatar up to overlap background */
-    z-index: 1;
-    border: 2px solid var(--border-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.avatar {
-    width: var(--image-size);
-    height: var(--image-size);
-    object-fit: cover;
-    overflow: hidden;
-    transform: scale(1.55) translateY(10px);
-}
-
-.nickname {
-    font-size: 1.5em;
-    margin: 0px 0;
-    margin-top: 10px;
-    font-family: 'Rota SemiBold';
-}
-
-.description {
-    color: var(--text-color);
-    margin: 4px;
-}
-
 .gradient-overlay-girl {
     position: absolute;
     top: 0;
@@ -475,119 +183,27 @@ html {
     z-index: 2;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between; /* Распределяет пространство между элементами */
-    align-items: center; /* Вертикально выравнивает элементы по центру */
+:root {
+    --green-gradient: linear-gradient(
+        rgba(200, 162, 200, 0.2),
+        rgba(200, 162, 200, 1)
+    )
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    width: 100px;
-    margin-right: 15px;
-    padding: 8px;
-    padding-left: 15px;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    z-index: 100000;
-    border: 2px solid var(--border-color);
-
-}
-
-.dropdown-content {
-    width: 100px;
-    display: none;
-    position: absolute;
-    background-color: var(--background-color);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 25px;
-    border: 2px solid var(--border-color);
-    margin-top: 30px;
-}
-
-.dropdown-content a {
-    color: var(--text-color);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    border-radius: 25px;
-
-.dropdown-borders {
-    border: 2px solid var(--border-color);
-    border-radius: 25px;
-}
-
-.dropdown-content a:hover {
-    background-color: var(--border-color);
-    border-radius: 25px;
-}
-
-.dropdown-select {
-    padding: 10px;
-    border: 2px solid var(--border-color);
-    cursor: pointer;
-    border-radius: 25px;
-}
-
-.dropdown-content a:hover {background-color: var(--background-color)}
-.dropbtn {background-color: var(--icon-color)}
-.dropdown-select {
-    padding: 10px;
-    border: 2px solid var(--border-color);
-    cursor: pointer;
-    border-radius: 25px;
-}
-
-.centered-container {
-    display: grid;
-    place-items: center; /* Центрирование элемента по горизонтали и вертикали */
-    height: 100vh; /* Высота контейнера равна высоте видимой области */
-    text-align: center; /* Центрирование текста по горизонтали */
-}
-
-.p {
-    font-family: 'Rota SemiBold';
-}
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
-
-.header {
-        background-color: var(--tg-theme-header-bg-color);
-}
-
-.profile-container {
-    display: flex;
-    align-items: center;
-    background-color: #000;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-}
-
-.profile-photo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.user-info {
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
-}
-
-.username {
-    font-size: 16px;
-    font-weight: bold;
+:root {
+    --gradient-overlay-boy: {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        background: linear-gradient(
+            rgba(137, 172, 118, 0.2),
+            rgba(137, 172, 118, 1)
+        );
+        z-index: 2;
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -608,8 +224,6 @@ html {
     .icon-profile {
       filter: invert(0) sepia(0) saturate(7500%) hue-rotate(0deg) brightness(0%) contrast(100%);
     }
-}
-
 }
   
 @media (prefers-color-scheme: dark) {
