@@ -4,17 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="MEAVERSE.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        #userInfo {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0088cc;
+        }
+    </style>
 </head>
 <body>
 
     <div id="content"></div>
 
-    <div class="profile-container">
-        <img id="profile-photo" src="" alt="Profile Photo" class="profile-photo">
-        <div class="user-info">
-            <div class="username" id="username"></div>
-        </div>
+    <div id="userInfo">
+        <h1>Your Telegram Account Info</h1>
+        <p>Loading...</p>
     </div>
     
 
@@ -40,8 +54,33 @@
             <span>Profile</span>
         </a>
     </div>    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tg = window.Telegram.WebApp;
+
+            tg.ready(() => {
+                const user = tg.initDataUnsafe.user;
+                if (user) {
+                    const userInfoHtml = `
+                        <h1>Your Telegram Account Info</h1>
+                        <p><strong>User ID:</strong> ${user.id}</p>
+                        <p><strong>First Name:</strong> ${user.first_name}</p>
+                        <p><strong>Last Name:</strong> ${user.last_name || 'N/A'}</p>
+                        <p><strong>Username:</strong> ${user.username || 'N/A'}</p>
+                        <p><strong>Language Code:</strong> ${user.language_code}</p>
+                    `;
+                    document.getElementById('userInfo').innerHTML = userInfoHtml;
+                } else {
+                    document.getElementById('userInfo').innerHTML = '<p>Unable to fetch user data. Please ensure you're using this in a Telegram Mini App environment.</p>';
+                }
+            });
+
+            tg.expand();
+        });
+    </script>
     
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></>
     <script src="script.js"></script>
 
 </body>
