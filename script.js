@@ -251,11 +251,3 @@ link.addEventListener('click', function(event) {
         event.preventDefault(); // Отмена перехода
     }
 });
-
-// Обработчик кликов по странице
-document.addEventListener('click', function(event) {
-    // Если клик был не на ссылку, сбрасываем счётчик
-    if (event.target !== link) {
-        clickCount = 0;
-    }
-});
