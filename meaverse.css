@@ -68,7 +68,7 @@ button:focus, button:active, button:hover {
 
 .element-border:hover {
     transform: rotate(0deg) scale(1.01);
-    box-shadow: 13px 13px 0 #040404;
+    box-shadow: 12px 12px 0 #040404;
 }
 
 .banner-img {
