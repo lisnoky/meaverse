@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="MEAVERSE.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,8 +13,7 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin: 0;
-            padding: 20px;
+            margin: 20px;
         }
         h1 {
             color: #0088cc;
@@ -23,65 +21,39 @@
     </style>
 </head>
 <body>
-
-    <div id="content"></div>
-
     <div id="userInfo">
         <h1>Your Telegram Account Info</h1>
         <p>Loading...</p>
     </div>
-    
 
-    <div class="bottom-nav">
-        <a href="home.html" data-target="home" class="icon-link" id="home-link">
-            <i class="icon-home"></i>
-            <span>Home</span>
-        </a>
-        <a href="artists.html" data-target="artists" class="icon-link" id="artists-link">
-            <i class="icon-artists"></i>
-            <span>Artists</span>
-        </a>
-        <a href="citfm.html" data-target="citfm" class="icon-link" id="citfm-link">
-            <i class="icon-citfm"></i>
-            <span>Cit.FM</span>
-        </a>
-        <a href="shop.html" data-target="shop" class="icon-link" id="shop-link">
-            <i class="icon-shop"></i>
-            <span>Shop</span>
-        </a>
-        <a href="profile.html" data-target="profile" class="icon-link" id="profile-link">
-            <i class="icon-profile"></i>
-            <span>Profile</span>
-        </a>
-    </div>    
-
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const tg = window.Telegram.WebApp;
+        const tg = window.Telegram.WebApp;
 
-            tg.ready(() => {
-                const user = tg.initDataUnsafe.user;
-                if (user) {
-                    const userInfoHtml = `
+        function updateUserInfo() {
+            const userInfo = document.getElementById('userInfo');
+            try {
+                if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+                    const user = tg.initDataUnsafe.user;
+                    userInfo.innerHTML = `
                         <h1>Your Telegram Account Info</h1>
                         <p><strong>User ID:</strong> ${user.id}</p>
                         <p><strong>First Name:</strong> ${user.first_name}</p>
                         <p><strong>Last Name:</strong> ${user.last_name || 'N/A'}</p>
                         <p><strong>Username:</strong> ${user.username || 'N/A'}</p>
-                        <p><strong>Language Code:</strong> ${user.language_code}</p>
+                        <p><strong>Language Code:</strong> ${user.language_code || 'N/A'}</p>
                     `;
-                    document.getElementById('userInfo').innerHTML = userInfoHtml;
                 } else {
-                    document.getElementById('userInfo').innerHTML = '<p>Unable to fetch user data. Please ensure you're using this in a Telegram Mini App environment.</p>';
+                    userInfo.innerHTML = '<p>Unable to fetch user data. Please ensure you\'re using this in a Telegram Mini App environment.</p>';
                 }
-            });
+            } catch (error) {
+                userInfo.innerHTML = `<p>Error fetching user data: ${error.message}</p>`;
+            }
+        }
 
-            tg.expand();
-        });
+        tg.onEvent('viewportChanged', updateUserInfo);
+        tg.expand();
+        updateUserInfo();
     </script>
-    
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="script.js"></script>
-
 </body>
 </html>
