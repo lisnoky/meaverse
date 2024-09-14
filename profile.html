@@ -5,22 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="MEAVERSE.css">
     <style>
+        :root {
+            --primary-color: #0088cc;
+            --secondary-color: #f0f2f5;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-        }
-        #userInfo {
-            background-color: white;
-            border-radius: 8px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin: 20px;
+            line-height: 1.6;
         }
-        h1 {
-            color: #0088cc;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .user-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .user-username {
+            color: #666;
+            font-size: 1em;
+        }
+        .info-label {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* Style 1: List View */
+        .list-view .info-item {
+            margin-bottom: 10px;
+        }
+        
+        /* Style 2: Table View */
+        .table-view {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-view td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* Style 3: Grid View */
+        .grid-view {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .grid-view .info-item {
+            background-color: var(--secondary-color);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        /* Style 4: Compact View */
+        .compact-view {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .compact-view .info-item {
+            background-color: var(--secondary-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        /* Style switcher */
+        .style-switcher {
+            margin-bottom: 20px;
+        }
+        .style-switcher button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
+<body>
+    <div class="container">
+        <div class="style-switcher">
+            <button onclick="changeStyle('list-view')">List View</button>
+            <button onclick="changeStyle('table-view')">Table View</button>
+            <button onclick="changeStyle('grid-view')">Grid View</button>
+            <button onclick="changeStyle('compact-view')">Compact View</button>
+        </div>
+        <div id="userInfo" class="card">
+            <h1>Your Telegram Account Info</h1>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        
 <body>
     <div id="userInfo">
         <h1>Your Telegram Account Info</h1>
@@ -54,26 +156,66 @@
     <script src="script.js"></script>
     <script>
         const tg = window.Telegram.WebApp;
+        let currentStyle = 'list-view';
 
         function updateUserInfo() {
             const userInfo = document.getElementById('userInfo');
             try {
                 if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
                     const user = tg.initDataUnsafe.user;
-                    userInfo.innerHTML = `
-                        <h1>Your Telegram Account Info</h1>
-                        <p><strong>User ID:</strong> ${user.id}</p>
-                        <p><strong>First Name:</strong> ${user.first_name}</p>
-                        <p><strong>Last Name:</strong> ${user.last_name || 'N/A'}</p>
-                        <p><strong>Username:</strong> ${user.username || 'N/A'}</p>
-                        <p><strong>Language Code:</strong> ${user.language_code || 'N/A'}</p>
-                    `;
+                    const avatarUrl = user.photo_url || 'https://via.placeholder.com/100';
+                    
+                    let infoHTML = `
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <img src="${avatarUrl}" alt="Avatar" class="avatar">
+                            <div class="user-name">${user.first_name} ${user.last_name || ''}</div>
+                            <div class="user-username">@${user.username || 'N/A'}</div>
+                        </div>`;
+
+                    const infoItems = [
+                        { label: "User ID", value: user.id },
+                        { label: "First Name", value: user.first_name },
+                        { label: "Last Name", value: user.last_name || 'N/A' },
+                        { label: "Username", value: user.username || 'N/A' },
+                        { label: "Language", value: user.language_code || 'N/A' }
+                    ];
+
+                    infoHTML += getStyleHTML(infoItems);
+                    userInfo.innerHTML = infoHTML;
                 } else {
                     userInfo.innerHTML = '<p>Unable to fetch user data. Please ensure you\'re using this in a Telegram Mini App environment.</p>';
                 }
             } catch (error) {
                 userInfo.innerHTML = `<p>Error fetching user data: ${error.message}</p>`;
             }
+        }
+
+        function getStyleHTML(items) {
+            switch(currentStyle) {
+                case 'list-view':
+                    return `<div class="list-view">
+                        ${items.map(item => `<div class="info-item"><span class="info-label">${item.label}:</span> ${item.value}</div>`).join('')}
+                    </div>`;
+                case 'table-view':
+                    return `<table class="table-view">
+                        ${items.map(item => `<tr><td class="info-label">${item.label}</td><td>${item.value}</td></tr>`).join('')}
+                    </table>`;
+                case 'grid-view':
+                    return `<div class="grid-view">
+                        ${items.map(item => `<div class="info-item"><div class="info-label">${item.label}</div>${item.value}</div>`).join('')}
+                    </div>`;
+                case 'compact-view':
+                    return `<div class="compact-view">
+                        ${items.map(item => `<div class="info-item">${item.label}: ${item.value}</div>`).join('')}
+                    </div>`;
+                default:
+                    return '';
+            }
+        }
+
+        function changeStyle(style) {
+            currentStyle = style;
+            updateUserInfo();
         }
 
         tg.onEvent('viewportChanged', updateUserInfo);
