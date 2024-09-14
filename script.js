@@ -1,3 +1,5 @@
+const botToken = '6876430771:AAHhcpK9CwluRfg6_BFWpaKxalhytGETFpo';
+
 // Подключение Telegram WebApp
 let tg = window.Telegram.WebApp;
 let buy = document.getElementById("buy");
