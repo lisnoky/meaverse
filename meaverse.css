@@ -71,18 +71,13 @@ button:focus, button:active, button:hover {
     box-shadow: 13px 13px 0 #040404;
 }
 
-.card:active {
-    animation: shake 0.5s ease-in-out;
-  }
-  .card:hover {
-    transform: rotate(0deg) scale(1.02);
-    box-shadow: 20px 20px 0 #000;
-  }
-
 .banner-img {
-    width: 334px;
+    /*width: 334px;
+    height: auto;*/
+    width: 22em;
     height: auto;
-    margin-bottom: -6px;
+    justify-content: center;
+    margin-bottom: -3px;
 }
 
 .icon-link {
