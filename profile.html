@@ -62,23 +62,14 @@
                     const user = tg.initDataUnsafe.user;
                     const avatarUrl = user.photo_url || 'https://via.placeholder.com/100';
 
-                    let infoHTML = `
-                        <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="${avatarUrl}" alt="Avatar" class="avatar">
-                            <div class="user-name">${user.first_name} ${user.last_name || ''}</div>
-                            <div class="user-username">@${user.username || 'N/A'}</div>
-                        </div>`;
-
                     userInfo.innerHTML = `
                         <h1>Your Telegram Account Info</h1>
+                        <img src="${avatarUrl}" alt="Avatar" class="avatar">
                         <p><strong>First Name:</strong> ${user.first_name}</p>
                         <p><strong>Last Name:</strong> ${user.last_name || 'N/A'}</p>
                         <p><strong>Username:</strong> ${user.username || 'N/A'}</p>
                     `;
 
-                    infoHTML += getStyleHTML(infoItems);
-                    userInfo.innerHTML = infoHTML;
-                    
                 } else {
                     userInfo.innerHTML = '<p>Unable to fetch user data. Please ensure you\'re using this in a Telegram Mini App environment.</p>';
                 }
