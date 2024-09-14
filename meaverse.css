@@ -74,9 +74,9 @@ button:focus, button:active, button:hover {
 .banner-img {
     /*width: 334px;
     height: auto;*/
-    width: 20em;
+    width: 19em;
     height: auto;
-    margin-bottom: -5px;
+    margin-bottom: -4px;
 }
 
 .icon-link {
