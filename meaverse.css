@@ -59,6 +59,7 @@ button:focus, button:active, button:hover {
     position: relative;
     transform: rotate(-1deg);
     transition: all 0.3s ease;
+    margin-top: 5px;
 }
 
 .element-border:active {
