@@ -4,6 +4,7 @@ let buy = document.getElementById("buy");
 let order = document.getElementById("order");
 tg.expand();
 
+/*
 // Функция для применения стилей темы
 function setTheme(theme) {
     if (theme === 'dark') {
@@ -29,6 +30,7 @@ setTheme(prefersDarkScheme.matches ? 'dark' : 'light');
 prefersDarkScheme.addEventListener('change', (e) => {
     setTheme(e.matches ? 'dark' : 'light');
 });
+*/
 
 // Функция для обработки активных ссылок меню
 function setActiveLink() {
