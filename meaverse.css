@@ -66,8 +66,8 @@ button:focus, button:active, button:hover {
 }
 
 .element-border:hover {
-    transform: rotate(0deg) scale(1.02);
-    box-shadow: 20px 20px 0 #040404;
+    transform: rotate(0deg) scale(1.01);
+    box-shadow: 13px 13px 0 #040404;
 }
 
 .card:active {
