@@ -23,23 +23,43 @@ body {
     margin-top: 0;
 }
 
+.banner {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
 .container {
     margin-top: 20px;
     margin-left: 16px;
     margin-right: 16px;
 }
 
-.title_text {
+.title-text {
     font-size: 35px;
     font-family: 'Rota';
     font-weight: 1000;
 }
 
-.banner_text {
+.title-text-home {
+    font-size: 35px;
+    font-family: 'Rota';
+    font-weight: 1000;
+    margin-bottom: -15px;
+}
+
+.banner-text {
     font-size: 15px;
     font-family: 'Coolvetica';
-    font-weight: 600;
+    font-weight: 400;
     margin-top: 6px;
+}
+
+.banner-text-home {
+    font-size: 15px;
+    font-family: 'Coolvetica';
+    font-weight: 400;
+    margin-top: 25px;
+    margin-bottom: -3px;
 }
 
 a:focus, a:active, a:hover,
