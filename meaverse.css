@@ -1,13 +1,21 @@
 
 @font-face {
     font-family: 'Rota';
-    src: url('rota/Rota Complate Family/Rota-Regular.otf') format('opentype');
+    src: url('FONTS/Rota-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('FONTS/Coolvetica-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 body {
-    font-family: 'Rota', sans-serif;
+    font-family: 'Coolvetica', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     padding-bottom: 50px;
@@ -27,9 +35,9 @@ body {
     font-weight: 1000;
 }
 
-.home_banner_text {
+.banner_text {
     font-size: 15px;
-    font-family: 'Rota';
+    font-family: 'Coolvetica';
     font-weight: 600;
     margin-top: 6px;
 }

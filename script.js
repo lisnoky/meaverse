@@ -253,3 +253,20 @@ link.addEventListener('click', function(event) {
         event.preventDefault(); // Отмена перехода
     }
 });
+
+// Получаем элемент ссылки
+const link1 = document.getElementById('banner2');
+
+// Переменная для отслеживания кликов
+let clickCount2 = 0;
+
+// Обработчик клика по ссылке
+link.addEventListener('click', function(event) {
+    // Увеличиваем счётчик кликов
+    clickCount++;
+
+    // Если это первый клик, предотвращаем переход по ссылке
+    if (clickCount === 1) {
+        event.preventDefault(); // Отмена перехода
+    }
+});
