@@ -82,27 +82,14 @@ button:focus, button:active, button:hover {
 }
 
 .element-border {
-    border: 5px solid #040404;
-    box-shadow: 10px 10px 0 #040404;
-    position: relative;
-    transform: rotate(-1deg);
-    transition: all 0.3s ease;
+    border: 2px solid #040404;
     margin-top: 5px;
-}
-
-.element-border:active {
-    animation: shake 0.5s ease-in-out;
-}
-
-.element-border:hover {
-    transform: rotate(0deg) scale(1.01);
-    box-shadow: 12px 12px 0 #040404;
 }
 
 .banner-img {
     /*width: 334px;
     height: auto;*/
-    width: 318px;
+    width: 90vw;
     height: auto;
     margin-bottom: -4px;
 }
@@ -248,4 +235,10 @@ button:focus, button:active, button:hover {
         rgba(137, 172, 118, 1)
     );
     z-index: 2;
+}
+
+@media (max-width: 767px) {
+    .banner-img{
+        max-width: 100%;
+    }
 }
