@@ -9,10 +9,9 @@
 @font-face {
     font-family: 'Coolvetica';
     src: url('FONTS/Coolvetica-Regular.otf') format('opentype');
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
 }
-
 
 body {
     font-family: 'Coolvetica', sans-serif;
@@ -23,9 +22,18 @@ body {
     margin-top: 0;
 }
 
+.icon-left {
+    color: #3741c9;
+    text-decoration: none;
+}
+
 .banner {
     margin-bottom: 10px;
     padding-bottom: 10px;
+}
+
+.text {
+    margin-top: 10px;
 }
 
 .container {
@@ -34,10 +42,11 @@ body {
     margin-right: 16px;
 }
 
-.title-text {
+.title-text-home {
     font-size: 35px;
     font-family: 'Rota';
     font-weight: 1000;
+    margin-bottom: -15px;
 }
 
 .title-text-home {
@@ -45,6 +54,21 @@ body {
     font-family: 'Rota';
     font-weight: 1000;
     margin-bottom: -15px;
+}
+
+.title_text {
+    font-size: 24px;
+    font-family: 'Rota';
+    font-weight: 1000;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.title2 {
+    font-size: 22px;
+    font-family: 'Coolvetica';
+    font-weight: 400;
+    margin-top: 10px;
 }
 
 .banner-text {
@@ -66,7 +90,7 @@ a:focus, a:active, a:hover,
 button:focus, button:active, button:hover {
     outline: none;
     text-decoration: none;
-    color: inherit;
+    color: black;
 }
 
 :root {
@@ -160,6 +184,17 @@ button:focus, button:active, button:hover {
     display: block;
     margin-bottom: 4px; /* Отступ между иконкой и текстом */
     align-self: center; /* Выравнивание иконки по центру своей ячейки */
+}
+
+.header {
+    position: sticky;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+::selection {
+    color: #f2cf21;
+    background-color: #3741c9;
 }
 
 .bottom-nav {
