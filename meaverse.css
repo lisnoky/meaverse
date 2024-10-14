@@ -106,7 +106,7 @@ button:focus, button:active, button:hover {
 }
 
 .element-border {
-    border: 2px solid #040404;
+    border: 2px solid #000000;
     margin-top: 5px;
 }
 
@@ -116,6 +116,22 @@ button:focus, button:active, button:hover {
     width: 90vw;
     height: auto;
     margin-bottom: -4px;
+}
+
+.dirphoto {
+    width: 150px;
+    border: 2px solid #000000;
+    margin-right: 10px;
+}
+
+.dirtext{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.textmargin {
+    margin-top: 10px;
 }
 
 .icon-link {
@@ -193,8 +209,8 @@ button:focus, button:active, button:hover {
 }
 
 ::selection {
-    color: #f2cf21;
-    background-color: #3741c9;
+    color: #dabeda;
+    background-color: #89ac76;
 }
 
 .bottom-nav {
