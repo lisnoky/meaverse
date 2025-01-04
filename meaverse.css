@@ -1,8 +1,15 @@
 
 @font-face {
-    font-family: 'Rota';
-    src: url('FONTS/Rota-Regular.otf') format('opentype');
-    font-weight: 400;
+    font-family: 'Craftwork';
+    src: url('FONTS/CraftworkGrotesk-Medium.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CraftworkBold';
+    src: url('FONTS/CraftworkGrotesk-Bold.ttf') format('opentype');
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -14,7 +21,7 @@
 }
 
 body {
-    font-family: 'Coolvetica', sans-serif;
+    font-family: 'Craftwork', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     padding-bottom: 50px;
@@ -44,21 +51,14 @@ body {
 
 .title-text-home {
     font-size: 35px;
-    font-family: 'Rota';
-    font-weight: 1000;
-    margin-bottom: -15px;
-}
-
-.title-text-home {
-    font-size: 35px;
-    font-family: 'Rota';
+    font-family: 'CraftworkBold';
     font-weight: 1000;
     margin-bottom: -15px;
 }
 
 .title_text {
     font-size: 24px;
-    font-family: 'Rota';
+    font-family: 'CraftworkBold';
     font-weight: 1000;
     margin-left: 10px;
     margin-top: -5px;
