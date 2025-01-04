@@ -6,34 +6,6 @@ let buy = document.getElementById("buy");
 let order = document.getElementById("order");
 tg.expand();
 
-/*
-// Функция для применения стилей темы
-function setTheme(theme) {
-    if (theme === 'dark') {
-        document.documentElement.style.setProperty('--background-color', '#141414');
-        document.documentElement.style.setProperty('--text-color', '#fbfbfb');
-        document.documentElement.style.setProperty('--link-color', 'none');
-        document.documentElement.style.setProperty('--border-color', '#fbfbfb');
-        document.documentElement.style.setProperty('--bottom-nav-bg-color', 'rgba(7, 7, 7, 0.7)');
-    } else {
-        document.documentElement.style.setProperty('--background-color', '#fbfbfb');
-        document.documentElement.style.setProperty('--text-color', '#141414');
-        document.documentElement.style.setProperty('--link-color', 'none');
-        document.documentElement.style.setProperty('--border-color', '#141414');
-        document.documentElement.style.setProperty('--bottom-nav-bg-color', 'rgba(216, 216, 216, 0.7)');
-    }
-}
-
-// Установка темы в зависимости от предпочтений пользователя
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-setTheme(prefersDarkScheme.matches ? 'dark' : 'light');
-
-// Обновление темы при изменении настроек пользователя
-prefersDarkScheme.addEventListener('change', (e) => {
-    setTheme(e.matches ? 'dark' : 'light');
-});
-*/
-
 // Функция для обработки активных ссылок меню
 function setActiveLink() {
     const path = window.location.pathname;
@@ -100,36 +72,34 @@ async function verifyTelegramData(initData, botToken) {
     return hash === initData.hash;
 }
 
-// Получаем элемент ссылки
-const link = document.getElementById('banner1');
+// Ваш API ключ TGStat и username канала
+const API_KEY = 'bc6d3a3df29b6a2a31fe7cfe78eb9fcc'; // Замените на ваш API ключ
+const RVNGuser = 'reevnge'; // Например: "mychannel"
 
-// Переменная для отслеживания кликов
-let clickCount = 0;
+// URL для запроса данных
+const API_URL = `https://api.tgstat.ru/channels/getStats?token=${API_KEY}&channelId=${RVNGuser}`;
 
-// Обработчик клика по ссылке
-link.addEventListener('click', function(event) {
-    // Увеличиваем счётчик кликов
-    clickCount++;
+// Функция для загрузки данных о канале
+async function loadChannelData() {
+  try {
+    const response = await fetch(API_URL);
+    const data = await response.json();
 
-    // Если это первый клик, предотвращаем переход по ссылке
-    if (clickCount === 1) {
-        event.preventDefault(); // Отмена перехода
+    if (data.status === 'ok') {
+      // Извлекаем данные
+      const avatarUrl = data.response.photo;
+      const subscribersCount = data.response.subscribers_count;
+
+      // Обновляем данные в DOM
+      document.getElementById('avatar').src = avatarUrl;
+      document.getElementById('subscribers').textContent = subscribersCount;
+    } else {
+      console.error('Ошибка API:', data.message);
     }
-});
+  } catch (error) {
+    console.error('Ошибка загрузки данных:', error);
+  }
+}
 
-// Получаем элемент ссылки
-const link1 = document.getElementById('banner2');
-
-// Переменная для отслеживания кликов
-let clickCount2 = 0;
-
-// Обработчик клика по ссылке
-link.addEventListener('click', function(event) {
-    // Увеличиваем счётчик кликов
-    clickCount++;
-
-    // Если это первый клик, предотвращаем переход по ссылке
-    if (clickCount === 1) {
-        event.preventDefault(); // Отмена перехода
-    }
-});
+// Вызываем функцию загрузки данных
+loadChannelData();
