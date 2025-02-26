@@ -1,0 +1,292 @@
+
+@font-face {
+    font-display: swap;
+    font-family: Erica One;
+    font-weight: 400;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/ericaone/woff2/EricaOne-Regular.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 100;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Thin.subset.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 200;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-ExtraLight.subset.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 300;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Light.subset.woff2) format("woff2")
+}
+
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 400;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Regular.subset.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 500;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Medium.subset.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 600;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-SemiBold.subset.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 700;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Bold.subset.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 800;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-ExtraBold.subset.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Pretendard;
+    font-weight: 900;
+    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Black.subset.woff2) format("woff2")
+}
+
+body {
+    font-family: 'Craftwork', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding-bottom: 50px;
+    margin: 0px;
+    margin-top: 0;
+}
+
+.icon-left {
+    color: #3741c9;
+    text-decoration: none;
+}
+
+.banner {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.text {
+    margin-top: 10px;
+}
+
+.container {
+    margin-top: 20px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.title-text-home {
+    font-size: 35px;
+    margin-bottom: -15px;
+}
+
+.title_text {
+    font-size: 24px;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.title2 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.banner-text {
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.banner-text-home {
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: -3px;
+}
+
+a:focus, a:active, a:hover,
+button:focus, button:active, button:hover {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+.banner-img {
+    width: 90vw;
+    height: auto;
+    margin-bottom: -4px;
+}
+
+.textmargin {
+    margin-top: 10px;
+}
+
+.use-webfont body,.use-webfont button,.use-webfont input,.use-webfont select,.use-webfont table,.use-webfont textarea {
+    font-family: Pretendard,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif
+}
+
+:root {
+    --background-color: #fbfbfb;
+    --text-color: #040404;
+    --link-color: none;
+    --border-color: #040404;
+    --bottom-nav-bg-color: rgba(245, 245, 245, 0.7);
+    --icon-color: #040404;
+    --shadow-color: rgba(1, 1, 1, 0.5);
+    --image-size: 100%;
+    --product-card: #fbfbfb;
+}
+
+.icon-link {
+    display: grid;
+    grid-template-rows: auto auto; /* Два ряда: один для иконки, другой для текста */
+    justify-items: center; /* Горизонтальное выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    text-decoration: none; /* Убрать подчеркивание ссылки */
+    color: var(--text-color); /* Цвет текста */
+    width: auto; /* Или нужная вам ширина */
+    height: 30px; /* Или нужная вам высота */
+    text-align: center; /* Центрирование текста */
+    margin-bottom: 10px;
+}
+
+.icon-home {
+    width: 25px;
+    height: 25px;
+    background-image: url('svg/icons/home.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    margin-bottom: 4px; /* Отступ между иконкой и текстом */
+    align-self: center; /* Выравнивание иконки по центру своей ячейки */
+}
+
+.icon-artists {
+    width: 24px;
+    height: 24px;
+    background-image: url('svg/icons/artists.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    margin-bottom: 4px; /* Отступ между иконкой и текстом */
+    align-self: center; /* Выравнивание иконки по центру своей ячейки */
+}
+
+.icon-citfm {
+    width: 24px;
+    height: 24px;
+    background-image: url('svg/icons/citfm.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    margin-bottom: 4px; /* Отступ между иконкой и текстом */
+    align-self: center; /* Выравнивание иконки по центру своей ячейки */
+}
+
+.icon-shop {
+    width: 24px;
+    height: 24px;
+    background-image: url('svg/icons/shop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    margin-bottom: 4px; /* Отступ между иконкой и текстом */
+    align-self: center; /* Выравнивание иконки по центру своей ячейки */
+}
+
+.icon-profile {
+    width: 24px;
+    height: 24px;
+    background-image: url('svg/icons/profile.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    margin-bottom: 4px; /* Отступ между иконкой и текстом */
+    align-self: center; /* Выравнивание иконки по центру своей ячейки */
+}
+
+.header {
+    position: sticky;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+::selection {
+    color: #dabeda;
+    background-color: #89ac76;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--bottom-nav-bg-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    color: var(--text-color);
+    font-family: 'Rota', sans-serif;
+    z-index: 100;
+}
+
+.bottom-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom-nav li {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+    padding: 10px 0;
+}
+
+.bottom-nav a i {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.bottom-nav * {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 767px) {
+    .banner-img{
+        max-width: 100%;
+    }
+}
