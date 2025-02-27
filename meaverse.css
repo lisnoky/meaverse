@@ -79,11 +79,6 @@ body {
     margin-top: 0;
 }
 
-.banner {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
-
 .text {
     margin-top: 10px;
 }
@@ -116,19 +111,38 @@ body {
     margin-top: 6px;
 }
 
+.litllelighttext {
+    margin-top: 5%;
+    font-size: 90%;
+    color: var(--light-text);
+}
+
 .banner-text-home {
     font-size: 15px;
     margin-top: 25px;
     margin-bottom: -3px;
 }
 
+.banner-img {
+    width: 90vw;
+    height: auto;
+    margin-bottom: -4px;
+}
+
+.banner {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
 .artist-container {
-    height: 335px;
-    width: 950px;
+    display: flex;
+    margin-top: 15px;
+    padding-bottom: 10px;
 }
 
 .artist-photo {
-    width: 50% !important;
+    width: 20vw !important;
+    border-radius: 100%;
 }
 
 a, a:focus, a:active, a:hover,
@@ -136,12 +150,6 @@ button:focus, button:active, button:hover {
     outline: none;
     text-decoration: none;
     color: var(--text-color);
-}
-
-.banner-img {
-    width: 90vw;
-    height: auto;
-    margin-bottom: -4px;
 }
 
 .textmargin {
@@ -162,6 +170,7 @@ button:focus, button:active, button:hover {
     --shadow-color: rgba(1, 1, 1, 0.5);
     --image-size: 100%;
     --product-card: #fbfbfb;
+    --light-text: #525252;
 }
 
 
