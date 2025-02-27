@@ -79,11 +79,6 @@ body {
     margin-top: 0;
 }
 
-.icon-left {
-    color: #3741c9;
-    text-decoration: none;
-}
-
 .banner {
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -101,6 +96,7 @@ body {
 
 .title-text-home {
     font-size: 35px;
+    font-weight: 500;
     margin-bottom: -15px;
 }
 
@@ -126,11 +122,20 @@ body {
     margin-bottom: -3px;
 }
 
-a:focus, a:active, a:hover,
+.artist-container {
+    height: 335px;
+    width: 950px;
+}
+
+.artist-photo {
+    width: 50% !important;
+}
+
+a, a:focus, a:active, a:hover,
 button:focus, button:active, button:hover {
     outline: none;
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
 }
 
 .banner-img {
@@ -157,6 +162,13 @@ button:focus, button:active, button:hover {
     --shadow-color: rgba(1, 1, 1, 0.5);
     --image-size: 100%;
     --product-card: #fbfbfb;
+}
+
+
+.icon-left {
+    color: #3741c9;
+    text-decoration: none;
+    margin-top: 50%;
 }
 
 .icon-link {
