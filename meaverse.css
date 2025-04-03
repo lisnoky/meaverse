@@ -71,7 +71,7 @@
 }
 
 body {
-    font-family: 'Craftwork', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     padding-bottom: 50px;
@@ -117,6 +117,11 @@ body {
     color: var(--light-text);
 }
 
+.open_date {
+    font-size: 85%;
+    color: var(--light-text);
+}
+
 .banner-text-home {
     font-size: 15px;
     margin-top: 25px;
@@ -146,7 +151,7 @@ body {
 }
 
 .channel_name {
-    font-size: 20px;
+    font-size: 105%;
 }
 
 .light_line {
@@ -191,6 +196,7 @@ button:focus, button:active, button:hover {
 }
 
 .icon-link {
+    font-family: 'Pretendart', sans-serif;
     display: grid;
     grid-template-rows: auto auto; /* Два ряда: один для иконки, другой для текста */
     justify-items: center; /* Горизонтальное выравнивание по центру */
