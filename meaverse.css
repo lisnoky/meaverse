@@ -80,7 +80,6 @@ body {
 }
 
 .text {
-    margin-top: 10px;
     margin-left: 15px;
 }
 
@@ -142,7 +141,7 @@ body {
 }
 
 .artist-photo {
-    width: 20vw !important;
+    width: 18vw;
     border-radius: 100%;
 }
 
