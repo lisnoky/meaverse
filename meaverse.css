@@ -1,77 +1,20 @@
-
 @font-face {
-    font-display: swap;
-    font-family: Erica One;
-    font-weight: 400;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/ericaone/woff2/EricaOne-Regular.woff2) format("woff2")
+    font-family: ThatThatNewPixel;
+    src: url(FONTS/thatthatnewpixelfamilytest-italicsquare.otf);
 }
 
 @font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 100;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Thin.subset.woff2) format("woff2")
+    font-family: SFPro;
+    src: url(FONTS/SFProDisplay-Regular.ttf);
 }
 
 @font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 200;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-ExtraLight.subset.woff2) format("woff2")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 300;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Light.subset.woff2) format("woff2")
-}
-
-
-@font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 400;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Regular.subset.woff2) format("woff2")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 500;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Medium.subset.woff2) format("woff2")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 600;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-SemiBold.subset.woff2) format("woff2")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 700;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Bold.subset.woff2) format("woff2")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 800;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-ExtraBold.subset.woff2) format("woff2")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: Pretendard;
-    font-weight: 900;
-    src: url(https://cdn-v2pstatic.weverse.io/wev_web_fe/assets/fonts/pretendard/woff2-subset/Pretendard-Black.subset.woff2) format("woff2")
+    font-family: SFProBold;
+    src: url(FONTS/SFProDisplay-Bold.ttf);
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: SFPro;
     background-color: var(--background-color);
     color: var(--text-color);
     padding-bottom: 50px;
@@ -83,6 +26,10 @@ body {
     margin-left: 15px;
 }
 
+.bold {
+    font-family: SFProBold;
+}
+
 .container {
     margin-top: 20px;
     margin-left: 16px;
@@ -90,9 +37,11 @@ body {
 }
 
 .title-text-home {
+    font-family: ThatThatNewPixel;
     font-size: 35px;
     font-weight: 500;
     margin-bottom: -15px;
+    text-shadow: #1074c2 0px 2px;
 }
 
 .title_text {
@@ -120,12 +69,13 @@ body {
 .open_date {
     font-size: 85%;
     color: var(--light-text);
+    margin-top: 3px;
 }
 
 .banner-text-home {
     font-size: 15px;
     margin-top: 25px;
-    margin-bottom: -3px;
+    margin-bottom: 3px;
 }
 
 .banner-img {
@@ -164,15 +114,16 @@ a, a:focus, a:active, a:hover,
 button:focus, button:active, button:hover {
     outline: none;
     text-decoration: none;
-    color: var(--text-color);
+    color: #1549ae;
 }
 
 .textmargin {
     margin-top: 10px;
 }
 
-.use-webfont body,.use-webfont button,.use-webfont input,.use-webfont select,.use-webfont table,.use-webfont textarea {
-    font-family: Pretendard,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif
+.main {
+    display: flex;
+    margin-top: 10%;
 }
 
 :root {
@@ -242,10 +193,10 @@ button:focus, button:active, button:hover {
     align-self: center; /* Выравнивание иконки по центру своей ячейки */
 }
 
-.icon-shop {
+.icon-onstage {
     width: 24px;
     height: 24px;
-    background-image: url('svg/icons/shop.svg');
+    background-image: url('svg/icons/onstage.svg');
     background-size: contain;
     background-repeat: no-repeat;
     display: block;
@@ -253,10 +204,10 @@ button:focus, button:active, button:hover {
     align-self: center; /* Выравнивание иконки по центру своей ячейки */
 }
 
-.icon-profile {
+.icon-related {
     width: 24px;
     height: 24px;
-    background-image: url('svg/icons/profile.svg');
+    background-image: url('svg/icons/related.svg');
     background-size: contain;
     background-repeat: no-repeat;
     display: block;
@@ -271,8 +222,8 @@ button:focus, button:active, button:hover {
 }
 
 ::selection {
-    color: #dabeda;
-    background-color: #89ac76;
+    color: #ffcdda;
+    background-color: #1074c2;
 }
 
 .bottom-nav {

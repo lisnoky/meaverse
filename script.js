@@ -56,50 +56,31 @@ function sortCards(criteria, direction, displayText) {
     toggleDropdown();
 }
 
-// Функция для аутентификации данных пользователя через Telegram
-async function verifyTelegramData(initData, botToken) {
-    const secretKey = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(botToken));
-    const checkString = Object.keys(initData)
-        .filter(key => key !== 'hash')
-        .sort()
-        .map(key => `${key}=${initData[key]}`)
-        .join('\n');
+const token = '6876430771:AAHhcpK9CwluRfg6_BFWpaKxaIhytGETFpo';
+const RVNGuser = 'reevnge';
 
-    const key = await crypto.subtle.importKey('raw', secretKey, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
-    const signature = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(checkString));
-    const hash = Array.from(new Uint8Array(signature)).map(b => b.toString(16).padStart(2, '0')).join('');
-
-    return hash === initData.hash;
+function httpRequest(URL, Method) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open(Method, URL, false);
+    xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xmlHttp.send(null);
+    return JSON.parse(xmlHttp.responseText);
 }
 
-// Ваш API ключ TGStat и username канала
-const API_KEY = 'bc6d3a3df29b6a2a31fe7cfe78eb9fcc'; // Замените на ваш API ключ
-const RVNGuser = 'reevnge'; // Например: "mychannel"
-
-// URL для запроса данных
-const API_URL = `https://api.tgstat.ru/channels/getStats?token=${API_KEY}&channelId=${RVNGuser}`;
-
-// Функция для загрузки данных о канале
-async function loadChannelData() {
-  try {
-    const response = await fetch(API_URL);
-    const data = await response.json();
-
-    if (data.status === 'ok') {
-      // Извлекаем данные
-      const avatarUrl = data.response.photo;
-      const subscribersCount = data.response.subscribers_count;
-
-      // Обновляем данные в DOM
-      document.getElementById('avatar').src = avatarUrl;
-      document.getElementById('subscribers').textContent = subscribersCount;
-    } else {
-      console.error('Ошибка API:', data.message);
-    }
-  } catch (error) {
-    console.error('Ошибка загрузки данных:', error);
-  }
+function getChatDetails() {
+    return httpRequest('https://api.telegram.org/bot${6876430771:AAHhcpK9CwluRfg6_BFWpaKxaIhytGETFpo}/getChat?chat_id=${-1001918197812}', 'GET');
 }
 
-// Вызываем функцию загрузки данных
-loadChannelData();
+var chatObj = getChatDetails()['result'];
+console.log(chatObj);
+    
+function getMemberCount() {
+    return httpRequest('https://api.telegram.org/bot${6876430771:AAHhcpK9CwluRfg6_BFWpaKxaIhytGETFpo}/getChatMembersCount?chat_id=${-1001918197812}', 'GET');
+}
+    
+var members = getMemberCount()['result'];
+console.log(members);
+
+let membercount = data.response.MemberCount
+
+document.getElementById('telegram-info').textContent = membercount
