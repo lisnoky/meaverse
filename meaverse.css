@@ -263,7 +263,7 @@ button:focus, button:active, button:hover {
     color: var(--text-color);
     font-family: 'Rota', sans-serif;
     z-index: 100;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(3px);
 }
 
 .bottom-nav ul {
