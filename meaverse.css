@@ -24,6 +24,7 @@ body {
 
 .text {
     margin-left: 15px;
+    margin-top: -3px;
 }
 
 .bold {
@@ -32,8 +33,31 @@ body {
 
 .container {
     margin-top: 20px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.updates {
+    margin-top: 35px;
+}
+
+.onstage_text {
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+.row-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-onstage-photo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
 }
 
 .title-text-home {
@@ -92,7 +116,8 @@ body {
 .artist-container {
     display: flex;
     margin-top: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    row-gap: center;
 }
 
 .artist-photo {
