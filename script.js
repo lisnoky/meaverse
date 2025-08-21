@@ -31,7 +31,7 @@ const startParam = urlParams.get('startapp');
 if (startParam) {
     if (startParam === 'meaverse') {
         // Код для открытия нужной вам страницы, например:
-        window.location.href = '/meaverse.html';
+        window.location.href = 'meaverse.html';
     }
 }
 
