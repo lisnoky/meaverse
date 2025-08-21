@@ -24,6 +24,17 @@ function toggleDropdown() {
     dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
 }
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const startParam = urlParams.get('startapp');
+
+if (startParam) {
+    if (startParam === 'meaverse') {
+        // Код для открытия нужной вам страницы, например:
+        window.location.href = '/meaverse.html';
+    }
+}
+
 // Закрытие выпадающего меню при клике вне его области
 window.addEventListener('click', function(event) {
     if (!event.target.matches('.dropdown-select')) {
