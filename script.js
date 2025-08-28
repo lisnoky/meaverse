@@ -24,17 +24,6 @@ function toggleDropdown() {
     dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
 }
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const startParam = urlParams.get('startapp');
-
-if (startParam) {
-    if (startParam === 'meaverse') {
-        // Код для открытия нужной вам страницы, например:
-        window.location.href = 'meaverse.html';
-    }
-}
-
 // Закрытие выпадающего меню при клике вне его области
 window.addEventListener('click', function(event) {
     if (!event.target.matches('.dropdown-select')) {
@@ -44,6 +33,31 @@ window.addEventListener('click', function(event) {
         }
     }
 });
+
+// script.js
+const urlParams = new URLSearchParams(window.location.search);
+const startParam = urlParams.get('tgWebAppStartParam');
+
+if (startParam) {
+    switch (startParam) {
+        case 'home':
+            // Перенаправление на главную
+            window.location.href = '/home.html'; // или просто '/'
+            break;
+        case 'meaverse':
+            // Перенаправление на страницу "О нас"
+            window.location.href = '/meaverse.html';
+            break;
+        case 'contacts':
+            // Перенаправление на страницу контактов
+            window.location.href = '/contacts.html';
+            break;
+        default:
+            // Если параметр не распознан
+            window.location.href = '/index.html';
+            break;
+    }
+}
 
 // Функция для сортировки карточек
 function sortCards(criteria, direction, displayText) {
