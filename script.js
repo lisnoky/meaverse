@@ -64,13 +64,13 @@ if (startParam) {
             // Перенаправление на страницу "О нас"
             window.location.href = '/meaverse.html';
             break;
-        case 'pressconferention':
+        case 'pressconference':
             // Перенаправление на страницу контактов
             window.location.href = '/pressconf.html';
             break;
         default:
             // Если параметр не распознан
-            window.location.href = '/index.html';
+            window.location.href = '/home.html';
             break;
     }
 }
