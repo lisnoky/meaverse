@@ -44,13 +44,29 @@ if (startParam) {
             // Перенаправление на главную
             window.location.href = '/home.html'; // или просто '/'
             break;
+        case 'artists':
+            // Перенаправление на страницу контактов
+            window.location.href = '/artists.html';
+            break;
+        case 'citfm':
+            // Перенаправление на страницу контактов
+            window.location.href = '/citfm.html';
+            break;
+        case 'onstage':
+            // Перенаправление на страницу контактов
+            window.location.href = '/onstage.html';
+            break;
+        case 'related':
+            // Перенаправление на страницу контактов
+            window.location.href = '/related.html';
+            break;
         case 'meaverse':
             // Перенаправление на страницу "О нас"
             window.location.href = '/meaverse.html';
             break;
-        case 'contacts':
+        case 'pressconferention':
             // Перенаправление на страницу контактов
-            window.location.href = '/contacts.html';
+            window.location.href = '/pressconf.html';
             break;
         default:
             // Если параметр не распознан

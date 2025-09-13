@@ -56,6 +56,17 @@ body {
     justify-content: space-between;
 }
 
+.quote {
+    background-color: var(--quote_color);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.quote_photo {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
 .margin-bottom {
     margin-bottom: 20px;
 }
@@ -86,12 +97,6 @@ body {
 .banner-text {
     font-size: 15px;
     margin-top: 6px;
-}
-
-.litllelighttext {
-    margin-top: 5%;
-    font-size: 90%;
-    color: var(--light-text);
 }
 
 .open_date {
@@ -126,17 +131,11 @@ body {
 .artist-photo {
     width: 17vw;
     height: 17vw;
-    border-radius: 100%;
+    clip-path: circle(50% at 50% 50%);
 }
 
 .channel_name {
     font-size: 19px;
-}
-
-.light_line {
-    height: 100%;
-    width: 3px;
-    color: var(--light-text);
 }
 
 a, a:focus, a:active, a:hover,
@@ -148,6 +147,11 @@ button:focus, button:active, button:hover {
 
 .textmargin {
     margin-top: 10px;
+}
+
+.prequote_bold {
+    font-family: SFProBold;
+    margin-top: 15px;
 }
 
 .main {
@@ -166,8 +170,8 @@ button:focus, button:active, button:hover {
     --image-size: 100%;
     --product-card: #fbfbfb;
     --light-text: #525252;
+    --quote_color: #d4d4d4
 }
-
 
 .icon-left {
     color: #3741c9;
