@@ -63,8 +63,17 @@ body {
 }
 
 .quote_photo {
-    border-top-left-radius: 5px;
+    border-radius: 5px;
+}
+
+.quote_photo_r {
     border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.quote_photo_l {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .margin-bottom {
@@ -308,6 +317,9 @@ button:focus, button:active, button:hover {
 
 @media (max-width: 767px) {
     .banner-img{
+        max-width: 100%;
+    }
+    .quote_photo{
         max-width: 100%;
     }
 }
