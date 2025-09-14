@@ -37,10 +37,6 @@ body {
     margin-right: 15px;
 }
 
-.updates {
-    margin-top: 35px;
-}
-
 .onstage_text {
     font-size: 15px;
     margin-top: 3px;
@@ -88,7 +84,6 @@ body {
     font-family: ThatThatNewPixel;
     font-size: 35px;
     font-weight: 500;
-    margin-bottom: -15px;
     text-shadow: #1074c2 0px 1px;
 }
 
@@ -116,7 +111,7 @@ body {
 
 .banner-text-home {
     font-size: 15px;
-    margin-top: 25px;
+    margin-top: 10px;
     margin-bottom: 3px;
 }
 
