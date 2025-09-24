@@ -47,7 +47,7 @@ body {
 }
 
 .line {
-    background-color: #ffffff;
+    background-color: var(--line_color);
     height: 2px;
     width: auto;
     margin-top: 1vh;
@@ -190,7 +190,7 @@ button:focus, button:active, button:hover {
     --product-card: #fbfbfb;
     --light-text: #525252;
     --quote_color: #e7e7e7;
-    --line_color: #ffffff;
+    --line_color: rgba(255, 255, 255, 0.4);
     --pink: #ffcdda;
     --blue: #1074c2;
 }
