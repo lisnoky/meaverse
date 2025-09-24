@@ -48,10 +48,11 @@ body {
 
 .line {
     background-color: var(--line_color);
-    height: 1px;
+    height: 3px;
     width: auto;
     margin-top: 1vh;
     margin-bottom: 1vh;
+    border-radius: 50%;
 }
 
 .row-space-between {
@@ -65,7 +66,7 @@ body {
 }
 
 .quote {
-    background-color: var(--quote_color);
+    background-color: var(--pink);
     padding: 10px;
     border-radius: 15px;
 }
@@ -180,7 +181,7 @@ button:focus, button:active, button:hover {
     --text-color: #040404;
     --link-color: none;
     --border-color: #040404;
-    --bottom-nav-bg-color: rgba(245, 245, 245, 0.7);
+    --bottom-nav-bg-color: rgba(255, 255, 255, 0.7);
     --icon-color: #040404;
     --shadow-color: rgba(1, 1, 1, 0.5);
     --image-size: 100%;
@@ -188,6 +189,8 @@ button:focus, button:active, button:hover {
     --light-text: #525252;
     --quote_color: #d4d4d4;
     --line_color: #ffffff;
+    --pink: #ffcdda;
+    --blue: #1074c2;
 }
 
 .icon-left {
@@ -271,8 +274,8 @@ button:focus, button:active, button:hover {
 }
 
 ::selection {
-    color: #ffcdda;
-    background-color: #1074c2;
+    color: var(--pink);
+    background-color: var(--blue);
 }
 
 .bottom-nav {
