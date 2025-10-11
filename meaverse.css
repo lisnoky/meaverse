@@ -269,6 +269,56 @@ button:focus, button:active, button:hover {
     align-self: center; /* Выравнивание иконки по центру своей ячейки */
 }
 
+.message_a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+}
+
+.message_q {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+}
+
+.message_au {
+    font-family: SfProBold;
+    font-size: 90%;
+    margin-bottom: 3px;
+}
+
+.message_a_last {
+    color: var(--background-color);
+    background-color: var(--blue);
+    padding: 6px 5px;
+    border-radius: 4px 14px 14px 14px;
+    margin: 3px 0px 3px 0px;
+}
+
+.message_a_top {
+    color: var(--background-color);
+    background-color: var(--blue);
+    padding: 6px 5px;
+    border-radius: 4px 14px 14px 4px;
+    margin: 3px 0px 3px 0px;
+}
+
+.message_q_last {
+    background-color: #d4d4d4;
+    padding: 6px 5px;
+    border-radius: 14px 4px 14px 14px;
+    margin: 3px 0px 3px 0px;
+}
+
+.message_q_top {
+    background-color: #d4d4d4;
+    padding: 6px 5px;
+    border-radius: 14px 4px 4px 14px;
+    margin: 3px 0px 3px 0px;
+}
+
 .header {
     position: sticky;
     margin-bottom: 10px;

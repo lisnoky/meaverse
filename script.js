@@ -72,9 +72,9 @@ if (startParam) {
             // Перенаправление на страницу контактов
             window.location.href = '/view_blz.html';
             break;
-        case 'interview_reaper':
+        case 'interview_mnj':
             // Перенаправление на страницу контактов
-            window.location.href = '/view_repbeg.html';
+            window.location.href = '/view_mnj.html';
             break;
         default:
             // Если параметр не распознан
