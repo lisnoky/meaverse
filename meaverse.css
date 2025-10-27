@@ -193,6 +193,8 @@ button:focus, button:active, button:hover {
     --line_color: rgba(255, 255, 255, 0.4);
     --pink: #ffcdda;
     --blue: #1074c2;
+    --orange1: #ffa202;
+    --orange2: #ff5702;
 }
 
 .icon-left {
@@ -389,4 +391,5 @@ button:focus, button:active, button:hover {
     .quote_photo{
         max-width: 100%;
     }
+
 }
