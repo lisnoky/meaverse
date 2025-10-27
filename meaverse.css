@@ -167,7 +167,7 @@ a, a:focus, a:active, a:hover,
 button:focus, button:active, button:hover {
     outline: none;
     text-decoration: none;
-    color: #1549ae;
+    color: var(--orange1);
 }
 
 .textmargin {
@@ -399,4 +399,5 @@ button:focus, button:active, button:hover {
     }
 
 }
+
 
