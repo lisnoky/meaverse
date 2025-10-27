@@ -42,6 +42,12 @@ body {
     margin-top: 3px;
 }
 
+.onstage_text_halloweek {
+    font-size: 15px;
+    margin-top: 3px;
+    text-color: var(--orange1);
+}
+
 .updates_os {
     margin-top: 5px;
 }
@@ -393,3 +399,4 @@ button:focus, button:active, button:hover {
     }
 
 }
+
