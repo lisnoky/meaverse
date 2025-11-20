@@ -42,12 +42,6 @@ body {
     margin-top: 3px;
 }
 
-.onstage_text_halloweek {
-    font-size: 15px;
-    margin-top: 3px;
-    text-color: var(--orange1);
-}
-
 .updates_os {
     margin-top: 5px;
 }
@@ -105,7 +99,7 @@ body {
     font-family: ThatThatNewPixel;
     font-size: 35px;
     font-weight: 500;
-    text-shadow: var(--orange1) 0px 1px;
+    text-shadow: #1074c2 0px 1px;
 }
 
 .title_text {
@@ -167,7 +161,7 @@ a, a:focus, a:active, a:hover,
 button:focus, button:active, button:hover {
     outline: none;
     text-decoration: none;
-    color: var(--orange1);
+    color: #1549ae;
 }
 
 .textmargin {
@@ -199,8 +193,6 @@ button:focus, button:active, button:hover {
     --line_color: rgba(255, 255, 255, 0.4);
     --pink: #ffcdda;
     --blue: #1074c2;
-    --orange1: #ffa202;
-    --orange2: #ff5702;
 }
 
 .icon-left {
@@ -338,8 +330,8 @@ button:focus, button:active, button:hover {
 }
 
 ::selection {
-    color: var(--orange1);
-    background-color: #121212;
+    color: var(--pink);
+    background-color: var(--blue);
 }
 
 .bottom-nav {
@@ -397,8 +389,4 @@ button:focus, button:active, button:hover {
     .quote_photo{
         max-width: 100%;
     }
-
 }
-
-
-
