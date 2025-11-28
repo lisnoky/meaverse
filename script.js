@@ -76,6 +76,10 @@ if (startParam) {
             // Перенаправление на страницу контактов
             window.location.href = '/view_mnj.html';
             break;
+        case 'interview_thorne':
+            // Перенаправление на страницу контактов
+            window.location.href = '/view_thorne.html';
+            break;
         default:
             // Если параметр не распознан
             window.location.href = '/home.html';
